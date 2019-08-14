@@ -123,8 +123,7 @@
                                     <div data-c='img9' class="img9 sizeImg"></div>
                                 </div>
                                 <div id="bgFileContainer">
-                                    <input id='bgFile' type="file">
-                                    <div class="btn1 file">click</div>
+                                    <input type='file' onchange="readURL(this);" />
                                 </div>
                             </div>
                         </div>
@@ -155,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
-                                <button id='login' class="btn btn-default">Login</button>
+                                <button id='login' class="btn btn-primary">Login</button>
                             </div>
                         </div>
                     </div>
@@ -218,7 +217,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="button" value="Create" class="createTable btn btn-secondary">
+                            <div class="createTable btn btn-success"> Create</div>
+                            <div class="btn btn-danger"> Reset</div>
                         </form>
                     </div>
                 </div>
@@ -250,7 +250,8 @@
                                 <br>
                                 <br>
                             </div>
-                            <input type="button" value="Create" class="createListUl btn btn-secondary">
+                            <div class="createListUl btn btn-success">Create</div>
+                            <div class="btn btn-danger"> Reset</div>
                         </form>
                     </div>
                 </div>
@@ -284,26 +285,29 @@
                                 <br>
                                 <br>
                             </div>
-                            <input type="button" value="Create" class="createListOl btn btn-secondary">
+                            <div class="createListOl btn btn-success">Create</div>
+                            <div class="btn btn-danger"> Reset</div>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-
-    <div id="textContainer">
-        <div id="lorem">
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet</p>
+        <div id="textContainer">
+            <div id=lorem " >
+            <div id=" text">
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
         </div>
         <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+    </div>
     </div>
     </div>
 

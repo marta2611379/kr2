@@ -44,12 +44,7 @@ center.addEventListener('click', () => {
     lorem.style.textAlign = 'center';
 })
 
-let fontSizeBtn = getId('fontSizeBtn');
-let fontSizeContainer = getId('fontSizeContainer');
-let size = getClass('size');
-
-
-//element position (left)
+//element position (left)  (for FONT FAMILY & FONT SIZE lists)
 function leftPos(e, container) {
     let leftt = 0;
     let div = e.target;
@@ -59,6 +54,11 @@ function leftPos(e, container) {
     }
     container.style.left = `${leftt}px`
 }
+
+//font size
+let fontSizeBtn = getId('fontSizeBtn');
+let fontSizeContainer = getId('fontSizeContainer');
+let size = getClass('size');
 
 fontSizeBtn.addEventListener('click', function (e) {
     fontSizeContainer.style.display = 'block';
@@ -76,6 +76,8 @@ for (let i = 0; i < size.length; i++) {
     }
 }
 
+
+//font family
 let fontFamilyBtn = getId('fontFamilyBtn');
 let fontFamilyContainer = getId('fontFamilyContainer');
 let fontF = getClass('fontF');
@@ -102,25 +104,32 @@ textContainer.addEventListener('mouseover', () => {
     fontSizeContainer.style.display = 'none';
 })
 
-getId('textColor').addEventListener('click', function (e) {
+
+//modal text color
+getId('textColor').addEventListener('click', function () {
     getClass('modal')[0].style.display = 'block';
-    lorem.style.color = 'black';
 })
 
+//modal Background
 getId('bgImg').addEventListener('click', () => {
     getClass('modal')[1].style.display = 'block';
 })
 
+getId('bgImgContainer').style.display = 'none';
+getId('bgFileContainer').style.display = 'none'
+
+//text color
 let getSelAll = c => document.querySelectorAll(c);
 let textCol = getSelAll('#textColorContainer>div');
 [].forEach.call(textCol, function (a) {
     a.onclick = function () {
         console.log(a)
         lorem.style.color = this.dataset.c;
-
     }
 })
 
+
+//background color
 let bgCol = getSelAll('#bgColorContainer>div');
 [].forEach.call(bgCol, function (a) {
     a.onclick = function () {
@@ -130,35 +139,27 @@ let bgCol = getSelAll('#bgColorContainer>div');
     }
 })
 
-
+//background image
 let bgImg = getSelAll('#bgImgContainer>div');
 [].forEach.call(bgImg, function (a) {
     a.onclick = function () {
         console.log(a)
-        // lorem.style.backgroundImage = this.dataset.c;
         lorem.style.backgroundImage = `url(img/` + this.dataset.c + `.jpg)`;
     }
 })
-let bgFile 
-getClass('file')[0].addEventListener('click', ()=>{
-    bgFile = getId('bgFile').value;
-    console.log(`url(..//${bgFile})`);
-    lorem.style.backgroundImage = `${bgFile}`;
-})
 
-
-
-for (let i = 0; i < getClass('modal').length; i++) {
-    getClass('close')[i].addEventListener('click', () => {
-        getClass('modal')[i].style.display = 'none';
-    })
+// background image FILE
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            lorem.style.backgroundImage = `url(${ e.target.result})`
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
-getId('bgImgContainer').style.display = 'none';
-getId('bgFileContainer').style.display = 'none'
-
 getClass('btn2')[0].style.borderBottom = 'none';
-
 for (let i = 0; i < getClass('btn2').length; i++) {
     getClass('btn2')[i].addEventListener('click', () => {
         if (i == 0) {
@@ -180,33 +181,23 @@ for (let i = 0; i < getClass('btn2').length; i++) {
         getClass('btn2')[i].style.borderBottom = 'none';
     })
 }
+
+//modal[i] close
+for (let i = 0; i < getClass('modal').length; i++) {
+    getClass('close')[i].addEventListener('click', () => {
+        getClass('modal')[i].style.display = 'none';
+    })
+}
+
+//edit code
 getId('textarea').value = getId('lorem').innerHTML
 getId('textarea').style.display = 'none';
 getId('buttonContainer1').style.display = 'none';
 
+//button CODE disabled
+getId('code').disabled = true;
 
-getId('lock').addEventListener('click', () => {
-
-
-})
-
-
-
-getId("code").disabled = true;
-getId('code').addEventListener('click', () => {
-    getId('lorem').style.display = 'none';
-    getId('textarea').style.display = 'inline';
-    getId('buttonContainer').style.display = 'none';
-    getId('buttonContainer1').style.display = 'block';
-})
-
-getClass('modal-body')[3].style.width = '500px';
-getClass('modal-content')[3].style.width = '500px';
-getClass('modal-header')[3].style.width = '500px';
-getClass('modal-dialog')[3].style.width = '500px';
-getClass('modal-dialog')[3].style.margin = 'auto';
-
-
+//modal Login
 getId('lock').addEventListener('click', () => {
     getClass('modal')[2].style.display = 'block';
 })
@@ -220,14 +211,25 @@ getId('login').addEventListener('click', () => {
         getClass('login')[0].style.border = '2px solid red'
         getClass('password')[0].style.border = '2px solid red'
     }
-
-
 })
 
+// button edit CODE
+getId('code').addEventListener('click', () => {
+    getId('lorem').style.display = 'none';
+    getId('textarea').style.display = 'inline';
+    getId('buttonContainer').style.display = 'none';
+    getId('buttonContainer1').style.display = 'block';
+})
 
+//modal Table
 getClass('tableBtn')[0].addEventListener('click', function () {
     getClass('modal')[3].style.display = 'block';
-    lorem.style.color = 'black';
+    getClass('modal-body')[3].style.width = '500px';
+    getClass('modal-content')[3].style.width = '500px';
+    getClass('modal-header')[3].style.width = '500px';
+    getClass('modal-dialog')[3].style.width = '500px';
+    getClass('modal-dialog')[3].style.margin = 'auto';
+
 })
 
 let f6 = document.forms['f6'];
@@ -246,11 +248,8 @@ getClass('createTable')[0].addEventListener('click', function () {
     let borderType = f6.borderType.value;
 
     if ((tr == '') || (td == '') || (tdWidth == '') || (tdHeight == '') || (borderWidth == '')) {
-
         alert('Заповніть всі поля!')
-
     } else {
-
         //create DIV for table
         let div = createEl('div');
         document.body.appendChild(div);
@@ -280,21 +279,13 @@ getClass('createTable')[0].addEventListener('click', function () {
             tdTag[i].style.borderColor = borderColor;
             tdTag[i].style.borderStyle = borderType;
         }
-
         getId('textarea').value += div.innerHTML;
         getClass('modal')[3].style.display = 'none';
 
     }
 })
 
-getClass('page')[0].addEventListener('click', () => {
-    getId('lorem').innerHTML = getId('textarea').value;
-    getId('lorem').style.display = 'block';
-    getId('textarea').style.display = 'none';
-    getId('buttonContainer').style.display = 'flex';
-    getId('buttonContainer1').style.display = 'none';
-})
-
+//modal UL list
 getClass('ulBtn')[0].addEventListener('click', function () {
     getClass('modal')[4].style.display = 'block';
     lorem.style.color = 'black';
@@ -304,15 +295,12 @@ let f7 = document.forms['f7'];
 
 //'Create listUL' button
 getClass('createListUl')[0].addEventListener('click', function () {
-    // buttonGroup.style.display = 'block';
 
     //get filled values
     let li = f7.li.value;
     let marksType = f7.marksType.value;
     if (li == '') {
-
         alert('Заповніть всі поля!')
-
     } else {
 
         //create DIV for list
@@ -345,10 +333,10 @@ getClass('createListUl')[0].addEventListener('click', function () {
 
 })
 
+//modal OL list
 getClass('olBtn')[0].addEventListener('click', function () {
     getClass('modal')[5].style.display = 'block';
     lorem.style.color = 'black';
-
 })
 
 let f8 = document.forms['f8'];
@@ -390,5 +378,24 @@ getClass('createListOl')[0].addEventListener('click', function () {
         getId('textarea').value += div.innerHTML;
         getClass('modal')[5].style.display = 'none';
     }
-
 })
+
+//first page
+getClass('page')[0].addEventListener('click', () => {
+    getId('lorem').innerHTML = getId('textarea').value;
+    getId('lorem').style.display = 'block';
+    getId('textarea').style.display = 'none';
+    getId('buttonContainer').style.display = 'flex';
+    getId('buttonContainer1').style.display = 'none';
+})
+
+for (let i = 0; i < getClass('btn-danger').length; i++) {
+    getClass('btn-danger')[i].onclick = function () {
+
+
+        for (let i = 0; i <document.getElementsByTagName('input').length; i++) {
+            document.getElementsByTagName('input')[i].value = '';
+        }
+
+    }
+}
