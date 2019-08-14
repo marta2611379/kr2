@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer {
+    background-color: rgb(175, 172, 172);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#buttonContainer,
+#buttonContainer1 {
+    display: flex;
+}
+
+#textContainer {
+    height: 100vh;
+    margin: 0 auto;
+    width: 90.5%;
+  
+}
+
+#lorem {
+    background-color: rgba(211, 217, 231, 0.65);
+    margin: 0 auto;
+    margin-top: 10px;
+    min-height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 60px;
+}
+
+#textarea {
+    min-height: 100%;
+    width: 100%;
+}
+
+.btn1 {
+    height: 40px;
+    width: 40px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.strikeout {
+    text-decoration: line-through;
+}
+
+#code, .margin{
+    margin-right: 15px;
+}
+
+#fontSizeContainer,
+#fontFamilyContainer {
+    min-height: 100px;
+    min-width: 40px;
+    background-color: rgb(119, 119, 119);
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    display: none;
+}
+
+.size:hover,
+.fontF:hover {
+    width: 100%;
+    background-color: rgb(139, 160, 139);
+}
+
+
+#textColorContainer,
+#bgColorContainer,
+#bgImgContainer {
+    width: 186px;
+    height: 186px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.sizeCol,
+.sizeImg {
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.red {
+    background-color: red;
+}
+
+.orangered {
+    background-color: orangered;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.yellowGreen {
+    background-color: yellowgreen;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.darkBlue {
+    background-color: darkblue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.img1 {
+    background-image: url(img/img1.jpg);
+}
+
+.img2 {
+    background-image: url(img/img2.jpg);
+}
+
+.img3 {
+    background-image: url(img/img3.jpg);
+}
+
+.img4 {
+    background-image: url(img/img4.jpg);
+}
+
+.img5 {
+    background-image: url(img/img5.jpg);
+}
+
+.img6 {
+    background-image: url(img/img6.jpg);
+}
+
+.img7 {
+    background-image: url(img/img7.jpg);
+}
+
+.img8 {
+    background-image: url(img/img8.jpg);
+}
+
+.img9 {
+    background-image: url(img/img9.jpg);
+}
+
+.modal {
+    min-height: 200px;
+    width: 30px;
+    background-color: rgba(181, 182, 182, 0.52);
+}
+
+.modal-content {
+    width: 220px !important;
+    margin: 30px auto !important;
+}
+
+.modal-header {
+    background-color: white;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.btn2 {
+    height: 30px;
+    width: 100px;
+    background-color: #fff;
+    border: 1px solid rgba(182, 180, 180, 0.507);
+    text-align: center;
+}
+
+.btnContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.tableBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+#borderColor,
+#borderType {
+    width: 80px;
+    margin-right: 40px;
+}
+
+.addContainer,
+.addContainer1 {
+    display: flex;
+}
+
+h6 {
+    font-size: 10px;
+    margin-right: 10px;
+}

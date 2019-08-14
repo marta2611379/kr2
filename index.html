@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="footer">
+            <div id="buttonContainer1">
+                <button class="page btn1"><i class="fa fa-save"></i></button>
+                <button class="tableBtn btn1"><i class="fa fa-table"></i></button>
+                <button class="ulBtn btn1"><i class="fa fa-list-ul"></i></button>
+                <button class="olBtn btn1"><i class="fa fa-list-ol"></i></button>
+            </div>
+            <div id="buttonContainer">
+                <button id="code" class="btn1"><i class="fa fa-code"></i></button>
+                <button class="bold btn1"><i class="fa fa-bold"></i></button>
+                <button class="italic btn1"><i class="fa fa-italic"></i></button>
+                <button class="underline btn1"><i class="fa fa-underline"></i></button>
+                <button class="strikeout btn1 margin"><i class="fa fa-strikethrough"></i></button>
+
+                <button id="left" class="btn1"><i class="fa fa-align-left"></i></button>
+                <button id="center" class="btn1"><i class="fa fa-align-center"></i></button>
+                <button id="right" class="btn1 margin"><i class="fa fa-align-right"></i></button>
+
+                <button id="fontSizeBtn" class="btn1"><i class="fa fa-font"></i></button>
+                <div id="fontSizeContainer">
+                    <div class="size">12px</div>
+                    <div class="size">14px</div>
+                    <div class="size">16px</div>
+                    <div class="size">18px</div>
+                    <div class="size">20px</div>
+                    <div class="size">22px</div>
+                    <div class="size">25px</div>
+                    <div class="size">30px</div>
+                </div>
+
+                <button id="fontFamilyBtn" class="btn1"><i class="fa fa-text">Tt</i></button>
+                <div id="fontFamilyContainer">
+                    <div class="fontF">Georgia</div>
+                    <div class="fontF">Arial</div>
+                    <div class="fontF">Verdana</div>
+                    <div class="fontF">Cambria</div>
+                    <div class="fontF">Impact</div>
+                </div>
+
+                <button id="textColor" class="btn1"><i class="fa fa-text">Text color</i></button>
+                <button id="bgImg" class="btn1 margin"><i class="fa fa-image"></i></button>
+                <button id="lock" class="btn1 "><i class="fa fa-lock"></i></button>
+
+                <div class="modal txtcol" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title">Text Color</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="textColorContainer">
+                                    <div data-c='red' class="red sizeCol"></div>
+                                    <div data-c='orangered' class="orangered sizeCol"></div>
+                                    <div data-c='orange' class="orange sizeCol"></div>
+                                    <div data-c='yellow' class="yellow sizeCol"></div>
+                                    <div data-c='yellowgreen' class="yellowGreen sizeCol"></div>
+                                    <div data-c='green' class="green sizeCol"></div>
+                                    <div data-c='blue' class="blue sizeCol"></div>
+                                    <div data-c='darkblue' class="darkBlue sizeCol"></div>
+                                    <div data-c='purple' class="purple sizeCol"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title">Background</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="btnContainer">
+                                    <div id="color" class="btn2">Color</div>
+                                    <div id="image" class="btn2">Image</div>
+                                    <div id="file" class="btn2">File</div>
+                                </div>
+
+                                <div id="bgColorContainer">
+                                    <div data-c='red' class="red sizeCol"></div>
+                                    <div data-c='orangered' class="orangered sizeCol"></div>
+                                    <div data-c='orange' class="orange sizeCol"></div>
+                                    <div data-c='yellow' class="yellow sizeCol"></div>
+                                    <div data-c='yellowgreen' class="yellowGreen sizeCol"></div>
+                                    <div data-c='green' class="green sizeCol"></div>
+                                    <div data-c='blue' class="blue sizeCol"></div>
+                                    <div data-c='darkblue' class="darkBlue sizeCol"></div>
+                                    <div data-c='purple' class="purple sizeCol"></div>
+                                </div>
+                                <div id="bgImgContainer">
+                                    <div data-c='img1' class="img1 sizeImg"></div>
+                                    <div data-c='img2' class="img2 sizeImg"></div>
+                                    <div data-c='img3' class="img3 sizeImg"></div>
+                                    <div data-c='img4' class="img4 sizeImg"></div>
+                                    <div data-c='img5' class="img5 sizeImg"></div>
+                                    <div data-c='img6' class="img6 sizeImg"></div>
+                                    <div data-c='img7' class="img7 sizeImg"></div>
+                                    <div data-c='img8' class="img8 sizeImg"></div>
+                                    <div data-c='img9' class="img9 sizeImg"></div>
+                                </div>
+                                <div id="bgFileContainer">
+                                    <input id='bgFile' type="file">
+                                    <div class="btn1 file">click</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal " tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title">Login</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mx-8">
+                                <div class="md-form mb-5">
+                                    <label data-error="wrong" data-success="right" for="defaultForm-email">Your login
+                                    </label>
+                                    <input type="text" class="form-control validate login">
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your
+                                        password</label>
+                                    <input type="password" id="defaultForm-pass" class="password form-control validate">
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button id='login' class="btn btn-default">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Table</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" name="f6">
+                            <div class="tableBox">
+                                <div id="tr">
+                                    <h6>Count TR</h6>
+                                    <input type="number" name="tr" placeholder="count of TR">
+                                    <br>
+
+                                    <h6>Width of TD</h6>
+                                    <input type="number" name="tdWidth" placeholder="width of TD">
+                                    <br>
+
+                                    <h6>Width of border</h6>
+                                    <input type="number" name="borderWidth" placeholder="Width:">
+                                    <br>
+                                </div>
+                                <div id="td">
+                                    <h6>Count TD</h6>
+                                    <input type="number" name="td" placeholder="count of TD">
+                                    <br>
+
+                                    <h6>Height of TD</h6>
+                                    <input type="number" name="tdHeigth" placeholder="height of TD">
+                                    <br>
+                                    <div class="addContainer1">
+                                        <h6>Type of border</h6>
+                                        <h6>Color of border</h6>
+                                    </div>
+                                    <div class="addContainer">
+                                        <select name="borderType" id="borderType" class="custom-select">
+                                            <option value="solid">solid</option>
+                                            <option value="dotted">dotted</option>
+                                            <option value="dashed">dashed</option>
+                                            <option value="double">double</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <select name="borderColor" id="borderColor" class="custom-select">
+                                            <option value="black">black</option>
+                                            <option value="red">red</option>
+                                            <option value="blue">blue</option>
+                                            <option value="green">green</option>
+                                        </select>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" value="Create" class="createTable btn btn-secondary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Create UL</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" name="f7">
+                            <div class="listBox">
+                                <h6>Count of LI</h6>
+                                <input type="number" name="li" placeholder="Count of LI">
+                                <br>
+                                <br>
+                                <h6>Type of marks</h6>
+                                <select name="marksType" id="marksType" class="custom-select">
+                                    <option value="square">square</option>
+                                    <option value="circle">circle</option>
+                                    <option value="disc">dics</option>
+                                </select>
+                                <br>
+                                <br>
+                            </div>
+                            <input type="button" value="Create" class="createListUl btn btn-secondary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Create OL</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" name="f8">
+                            <div class="listBox">
+                                <h6>Count of LI</h6>
+                                <input type="number" name="li" placeholder="Count of LI">
+                                <br>
+                                <br>
+                                <h6>Type of marks</h6>
+                                <select name="marksTypeol" id="marksType" class="custom-select">
+                                    <option value="1">1</option>
+                                    <option value="A">A</option>
+                                    <option value="a">a</option>
+                                    <option value="I">I</option>
+                                    <option value="i">i</option>
+                                </select>
+                                <br>
+                                <br>
+                            </div>
+                            <input type="button" value="Create" class="createListOl btn btn-secondary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="textContainer">
+        <div id="lorem">
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+    </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
